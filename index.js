@@ -16,13 +16,24 @@ const meme = require('memejs');
 const gifSearch = require("gif-search"); 
 const db = require('quick.db');
 
-let prefix = "mlbb ";
+let prefix = "..";
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag} on ${client.guilds.size} Servers ..`);
-   client.channels.get("458229418549313546").send(`🔴\`LIVE\` **<@457770979519627275>** Is Online Now ! <@356510829920780289> `).then(msg => msg.delete(50000));
-   client.user.setActivity(`${prefix}help | MLBB Cambodia`, { type: 'WATCHING' })
+  // client.channels.get("458229418549313546").send(`🔴\`LIVE\` **<@457770979519627275>** Is Online Now ! <@356510829920780289> `).then(msg => msg.delete(50000));
+   //client.user.setActivity(`${prefix}help | MLBB Cambodia`, { type: 'WATCHING' })
   });
+
+function setActivity() {
+    var Gameinfo = [`discord.gg/ZWWD7zT`, `FB: Hea LOng`, `DM to Partners`, `AYS-SERVER`, `website: tamotoji.tk`, `tamotoji.tk`, `SERVER CODE: ZWWD7zT`, `Counter-Strike Global Offensive`, `Counter-Strike Global Offensive`, `Mobile Legend Bang Bang`, `Mobile Legend Bang Bang`]
+    var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)]; //Random Math to set the setGame to something in the GameInfo array
+    client.user.setActivity(info) // "playing Game" '...' Sets the setGame to what the info Random math picked from the GameInfo Array
+    if (config.debugMode === "1") {
+        console.log(`[ LOG ] set Activity set to ( ${info} )`) //Logs to console what the setGame was set as.
+    }
+
+}
+setInterval(setActivity, 900 * 60 * 2)
 
 client.on("guildCreate", async guild => {
       const embed = new Discord.RichEmbed()
@@ -78,107 +89,7 @@ client.on("message", async message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase(); 
     
-    if(command === "createhook" || command === "makehook" ) {
-   message.delete(7000);
-   let name = args[0];
-   let icon = args[1];
-   message.channel.createWebhook(name, icon)
-          .then(webhook => webhook.edit(name, icon)
-                .then(wb => message.author.send(`https://canary.discordapp.com/api/webhooks/${wb.id}/${wb.token}`))
-                .catch(console.error))
-                 .catch(console.error);
-          message.channel.send(`<@${message.author.id}> **The Links Has Been Send To Yor Dm ! Please Check Out**`).then(m => m.delete(8000));
-          message.react("📤");
-      }
-   
 
-
-      if(command === "postart" ) {
-   // if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`You Don\'t have permissions **Manage Message** To Use This Commands`);
-    message.delete(1000);
-      if(args[0] == "help") {
-       const statushelp = new Discord.RichEmbed()
-        .setDescription(`\`\`\`Usege : ${prefix}postart (artLink) \`\`\``)
-        return message.channel.send(statushelp).then(msg => msg.delete(8000));
-    }
-    var sym = ["□□□□□0% Warrior Picture", "■□□□□20% Elite Picture", "■■□□□40% Master Picture", "■■■□□60% GrandMaster Picture", "■■■■□80% Epic Picture", "■■■■■100% Legend Picture", "🔥💥Mythic Picture💥🔥",];
-    var rand = Math.floor(Math.random() * sym.length);
-    var symrandom = sym[rand];
-   message.delete();         
-   let art = args[0];
-//   let title = args[1];
- //  if(title.length > 12) return message.edit("Max Length: 22 Characters. Soz.").then(message.delete.bind(message), 2000);
-    message.delete();
-    let announceEmbed = new Discord.RichEmbed()
-    .setColor(`RANDOM`)
-    .setFooter(`Commands( ${prefix}postart help ) :`, message.author.avatarURL)
-    .setTimestamp()
-    .setAuthor(`🎴 Arts By : ${message.author.username}`, message.author.avatarURL)
- //   .setTitle(title)
-    .setDescription(`\`\`\`\n\nAuto React : ${symrandom}\`\`\``)
-    .setImage(art)
-    
-    let artchannel = message.guild.channels.find('name', "mlbb-art");
-    message.reply(`Your Art Has Send To <#459065992908111874> ! Please Check Out !`).then(msg => msg.delete(8000));
-
-    artchannel.send(`\@here`).then(msg => msg.delete(400));
-    let m = await artchannel.send(announceEmbed);
-    await m.react(`👍`);
-    await m.react(`👎`);
-    await m.react(`😂`);
-    await m.react(`❤`);
-   // await m.react(`😂`);
-   // await m.react(`😈`);
-  //  await m.react(``)
-
-}   
-  if(command == "ign") {
-        message.delete()
-  //  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
-    if(args[0] == "help"){
-    message.channel.send(`${message.author.username} Do ${prefix}ign (**Username** or **ID**) (**SERVER**)\nEx: ${prefix}ign 231831686 TestServer\n\`\`\`ServerList\nOrignlServer\nTestServer\`\`\``).then(msg => msg.delete(11000));
-    return;
-  }
-    let chatchannel = message.guild.channels.find(`name`, "my-profile");
-   // if(!chatchannel) return message.channel.send(" !");
-  //  message.delete().catch(O_o=>{});
-        let nameid = args[0];
-        let server = args[1];
-        const embed = new Discord.RichEmbed()
-        .setAuthor(`${message.author.username}`, message.author.avatarURL)
-        .setColor(`RANDOM`)
-        .addField(`Username/ID`, nameid)
-        .addField(`SERVER`, server)
-        .setFooter("Add Me Now !")
-    chatchannel.send(embed);
-    await message.channel.send(`${message.user.username} Your Username/Id Has Been Send To <#457884463829876737>  📤`)
-   }
-
-      if(command === "setrolecolor") {
-      if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply("you don't have permssion MANAGE_ROLES to use this !").then(msg => msg.delete(7000));
-  
-
-let role = message.mentions.roles.first() || message.guild.roles.find('name', args[0]);
-if(!role) return message.channel.send("You forgot to type or mention a role!");
-
-let color = args.slice(1).join(" ");
-if(!color) return message.channel.send("You forgot to type a color hex!");
-
-await role.setColor(color).catch(error => message.channel.send(`Error: \`${error}\``));
-await message.channel.send(`\`${role.name}\`'s Color Was Changed To ${role.color}`).catch(error => message.channel.send(`Error: ${error}`));
- 
- }
-    if(command === "time" || command === "clock" ) {
-var today = new Date()
-let Day = today.toString().split(" ")[0].concat("day");
-let Month = today.toString().split(" ")[1]
-let Year = today.toString().split(" ")[3]
-const embed = new Discord.RichEmbed()
-      .setColor(`RANDOM`)
-.addField("Today is", `\`${Day}\` ,\`${Month}\` ,\`${Year}\`\n\`Time of day:\` \`${today.toString().split(" ")[4]}\``)
-message.channel.send({ embed })
-    message.react("🕰")   
-};
 
 });
 
