@@ -89,6 +89,11 @@ client.on("message", async message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase(); 
     
+  if(command === "say") {
+   if(message.author.id !== "356510829920780289") return;
+   message.delete();
+   message.channel.send(args.join(" "));
+}
 
 
 });
