@@ -1,4 +1,8 @@
+const Discord = require("discord.js");
+const config = require("./config.json");
+
 exports.run = (client, message, Discord, prefix) => {
+if(message.author.id !== config.ownerID) return;
   message.delete(5000);
   var embed = new Discord.RichEmbed()
   .setColor(`RANDOM`)
