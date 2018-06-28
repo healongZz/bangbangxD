@@ -7,6 +7,8 @@ exports.run = (client, message, Discord, prefix) => {
     var randomfooter = footertext[rand]; //THIS AND THE TWO LINES ABOVE IS TOTALLY UNNECESSARY. But you want to make your bot more interactive so keep it.Just an array of some random shit, you can add more if you would like just read the code and change it at your will! 
 
 
+    message.delete();
+
     message.channel.startTyping(); // TELLS YOUR HANDICAPPED BOT TO START TYPING! ;)
 
 
