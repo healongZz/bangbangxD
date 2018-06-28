@@ -23,7 +23,7 @@ exports.run = (client, message, Discord, prefix) => {
         .setFooter(`${randomfooter}`) //FOOTER AND ICON
         .setTimestamp(); //SHOWS THAT COOL TIME ON THE FOOTER!
 
-    await message.channel.send(embed) //NOW WE GIVE IT SOMETIME TO DO ALL THE CRAZY STUFF ON TOP AND THEN SEND THE EMBED!
+     message.channel.send(embed) //NOW WE GIVE IT SOMETIME TO DO ALL THE CRAZY STUFF ON TOP AND THEN SEND THE EMBED!
 
     message.channel.stopTyping(true); // TELLS YOUR HANDICAPPED BOT TO STOP TYPING! ;)
 
