@@ -10,7 +10,7 @@ exports.run = (client, message, Discord, prefix) => {
     message.channel.startTyping(); // TELLS YOUR HANDICAPPED BOT TO START TYPING! ;)
 
 
-    let msg = await message.channel.send('``Generating that sexy avatar...``') //UNNECESSARY BUT COOL.
+  //  let msg =  message.channel.send('``Generating that sexy avatar...``') //UNNECESSARY BUT COOL.
 
     let user = message.mentions.users.first() || message.author; //THIS IS IMPORTANT BECAUSE YOU WANT YOUR BOT TO SHOW OTHER PEOPLE'S AVATAR AS WELL BY MENTIONING THEM!
 
@@ -19,13 +19,12 @@ exports.run = (client, message, Discord, prefix) => {
     let embed = new Discord.RichEmbed() //HERE WE DEFINE THE EMBED
         .setAuthor(`${user.username}'s Avatar`) //HERE WE SHOW THE USER'S NAME!
         .setImage(user.displayAvatarURL) // USER'S AVATAR
-        .setColor(msg.guild.me.highestRole.color) //SET THE EMBED COLOR TO THE HIGHEST ROLE COLOR THE BOT HAS! cool right :D
-        .setFooter(`${randomfooter}`, `${boticon}`) //FOOTER AND ICON
+        .setColor('RANDOM') //SET THE EMBED COLOR TO THE HIGHEST ROLE COLOR THE BOT HAS! cool right :D
+        .setFooter(`${randomfooter}`) //FOOTER AND ICON
         .setTimestamp(); //SHOWS THAT COOL TIME ON THE FOOTER!
 
     await message.channel.send(embed) //NOW WE GIVE IT SOMETIME TO DO ALL THE CRAZY STUFF ON TOP AND THEN SEND THE EMBED!
 
     message.channel.stopTyping(true); // TELLS YOUR HANDICAPPED BOT TO STOP TYPING! ;)
 
-    msg.delete(); // THIS WILL DELETE (Generating that sexy avatar...) AFTER SENDING THE EMBED! This will be quick so watch out for the small details :P
 }
