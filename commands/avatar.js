@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 exports.run = (client, message, Discord, prefix) => { 
 
-   var footertext = [`${bot.user.username}: oof sexy`, `${bot.user.username}: nice`, `${bot.user.username}: 🔥`, `${bot.user.username}: Someone's looking sharp today!`, `${bot.user.username}: oof if i wasn't a bot...`, `${bot.user.username}: looking sexier than a mug`];
+   var footertext = [`${client.user.username}: oof sexy`, `${client.user.username}: nice`, `${client.user.username}: 🔥`, `${client.user.username}: Someone's looking sharp today!`, `${client.user.username}: oof if i wasn't a bot...`, `${client.user.username}: looking sexier than a mug`];
     var rand = Math.floor(Math.random() * footertext.length);
     var randomfooter = footertext[rand]; //THIS AND THE TWO LINES ABOVE IS TOTALLY UNNECESSARY. But you want to make your bot more interactive so keep it.Just an array of some random shit, you can add more if you would like just read the code and change it at your will! 
 
