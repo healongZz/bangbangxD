@@ -29,6 +29,7 @@ client.on('ready', () => {
    //client.user.setActivity(`${prefix}help | MLBB Cambodia`, { type: 'WATCHING' })
   });
 
+
 function setActivity() {
     var Gameinfo = [`discord.gg/ZWWD7zT`, `FB: Hea LOng`, `DM to Partners`, `AYS-SERVER`, `website: tamotoji.tk`, `tamotoji.tk`, `SERVER CODE: ZWWD7zT`, `Counter-Strike Global Offensive`, `Counter-Strike Global Offensive`, `Mobile Legend Bang Bang`, `Mobile Legend Bang Bang`]
     var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)]; //Random Math to set the setGame to something in the GameInfo array
