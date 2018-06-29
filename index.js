@@ -18,10 +18,6 @@ const db = require('quick.db');
 
 let prefix = "..";
 
-client.user.setAvatar('./avatar.gif')
-  .then(user => console.log(`New avatar set!`))
-  .catch(console.error);
-
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag} on ${client.guilds.size} Servers ..`);
@@ -31,7 +27,7 @@ client.on('ready', () => {
 
 
 function setActivity() {
-    var Gameinfo = [`discord.gg/ZWWD7zT`, `FB: Hea LOng`, `DM to Partners`, `AYS-SERVER`, `website: tamotoji.tk`, `tamotoji.tk`, `SERVER CODE: ZWWD7zT`, `Counter-Strike Global Offensive`, `Counter-Strike Global Offensive`, `Mobile Legend Bang Bang`, `Mobile Legend Bang Bang`]
+    var Gameinfo = [`discord.gg/ZWWD7zT`, `FB: Hea LOng`, `DM to Partners`, `AYS-SERVER`, `website: tamotoji.tk`, `tamotoji.tk`, `SERVER CODE: ZWWD7zT`, `Counter-Strike Global Offensive`, `Counter-Strike Global Offensive`, `MobileLegend: Bang Bang`, `MobileLegend: Bang Bang`, `MobileLegend: Bang Bang`]
     var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)]; //Random Math to set the setGame to something in the GameInfo array
     client.user.setActivity(info) // "playing Game" '...' Sets the setGame to what the info Random math picked from the GameInfo Array
     if (config.debugMode === "1") {
