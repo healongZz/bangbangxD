@@ -4,7 +4,7 @@ message.delete();
 
 if(message.author.id !== "356510829920780289") return;
 
-//let webText = "www.tamotoji.tk";
+let webText = "www.tamotoji.tk";
 const embed = new Discord.RichEmbed()
 .setTitle("www.tamotoji.tk")
 .setThumbnail("https://cdn.discordapp.com/attachments/460329537805484032/462175159579705344/LEGEND_20180629_140900.gif")
@@ -14,7 +14,7 @@ const embed = new Discord.RichEmbed()
 .setDescription("Discord : `TAMOTOJI's HangOut Server`\nDiscord Cambodia Community!🎉\n\n__**TAMOYOJI's  HangOut Server**__ Includes a Very Hug And Diverse Community , Free Game And Custom BOT And More!\nWebsite : [tamotoji.tk](http://bit.ly/2IygbyV)");
 //.addField("Web Link :", "[CLICK HERE](
 //message.channel.send(webText);
-message.channel.send(embed);
+let web = message.channel.send(embed) || message.channel.send(webText);
 
-
+message.channel.send(web);
 }
