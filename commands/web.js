@@ -14,7 +14,7 @@ const embed = new Discord.RichEmbed()
 .setDescription("Discord : `TAMOTOJI's HangOut Server`\nDiscord Cambodia Community!🎉\n\n__**TAMOYOJI's  HangOut Server**__ Includes a Very Hug And Diverse Community , Free Game And Custom BOT And More!\nWebsite : [tamotoji.tk](http://bit.ly/2IygbyV)");
 //.addField("Web Link :", "[CLICK HERE](
 //message.channel.send(webText);
-let web = message.channel.send(embed) || message.channel.send(webText);
+//let web = message.channel.send(embed) || message.channel.send(webText);
 
-message.channel.send(web);
+message.channel.send("www.tamotoji.tk").then(m => m.channel.send(embed));
 }
