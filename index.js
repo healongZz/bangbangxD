@@ -21,7 +21,7 @@ let prefix = "..";
 client.user.setAvatar('./avatar.gif')
   .then(user => console.log(`New avatar set!`))
   .catch(console.error);
-});
+
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag} on ${client.guilds.size} Servers ..`);
