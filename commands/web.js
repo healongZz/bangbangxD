@@ -9,8 +9,9 @@ const embed = new Discord.RichEmbed()
 .setTitle("www.tamotoji.tk")
 .setFooter("Hosting : github.com | TAMOTOJI", "https://cdn.discordapp.com/attachments/460329537805484032/462163125056307200/GitHub-Mark.png")
 .setAuthor("Website : TAMOTOJI", message.author.avatarURL)
-.setDescription("Discord : `TAMOTOJI's HangOut Server`\nDiscord Cambodia Community!🎉\n\n__**TAMOYOJI's  HangOut Server**__ Includes a Very Hug And Diverse Community , Free Game And Custom BOT And More!\n[WEBSITE](www.tamotoji.tk)");
+.setDescription("Discord : `TAMOTOJI's HangOut Server`\nDiscord Cambodia Community!🎉\n\n__**TAMOYOJI's  HangOut Server**__ Includes a Very Hug And Diverse Community , Free Game And Custom BOT And More!\n")
 
+.addField(" ", "www.tamotoji.tk");
 //message.channel.send(webText);
 message.channel.send(embed);
 
