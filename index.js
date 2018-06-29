@@ -18,6 +18,11 @@ const db = require('quick.db');
 
 let prefix = "..";
 
+client.user.setAvatar('./avatar.gif')
+  .then(user => console.log(`New avatar set!`))
+  .catch(console.error);
+});
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag} on ${client.guilds.size} Servers ..`);
   // client.channels.get("458229418549313546").send(`🔴\`LIVE\` **<@457770979519627275>** Is Online Now ! <@356510829920780289> `).then(msg => msg.delete(50000));
