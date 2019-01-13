@@ -27,7 +27,7 @@ client.on('ready', () => {
 
 
 function setActivity() {
-    var Gameinfo = [`discord.gg/ZWWD7zT`, `FB: Hea LOng`, `DM to Partners`, `AYS-SERVER`, `website: tamotoji.tk`, `tamotoji.tk`, `SERVER CODE: ZWWD7zT`, `Counter-Strike Global Offensive`, `Counter-Strike Global Offensive`, `MobileLegend: Bang Bang`, `MobileLegend: Bang Bang`, `MobileLegend: Bang Bang`]
+    var Gameinfo = [`FB: Hea LOng`, `FB: Hea LOng`,`Legcy Of Discord`, `Legcy Of Discord`]
     var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)]; //Random Math to set the setGame to something in the GameInfo array
     client.user.setActivity(info) // "playing Game" '...' Sets the setGame to what the info Random math picked from the GameInfo Array
     if (config.debugMode === "1") {
@@ -96,7 +96,12 @@ client.on("message", async message => {
    message.delete();
    message.channel.send(args.join(" "));
 }
-
+ 
+//  if(command === "embad") {
+//    if(message.author.id !== "356510829920780289") return;
+ //   cost args = args.join(" ");
+ //   cost sembed = Discrd.RichEmbed();
+// }
 
 });
 
