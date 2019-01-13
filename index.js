@@ -97,11 +97,16 @@ client.on("message", async message => {
    message.channel.send(args.join(" "));
 }
  
-//  if(command === "embad") {
-//    if(message.author.id !== "356510829920780289") return;
- //   cost args = args.join(" ");
- //   cost sembed = Discrd.RichEmbed();
-// }
+  if(command === "embad") {
+        message.delete(1000);
+    if(message.author.id !== "356510829920780289") return;
+     let args = args.join(" ");
+     let sembed = new Discrd.RichEmbed()
+        .setColor('RANDOM')
+        .setDescription('args');
+        
+        message.channel.send(sembed);
+ }
 
 });
 
