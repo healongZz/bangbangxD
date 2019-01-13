@@ -1,14 +1,18 @@
 exports.run = (client, message, Discord, prefix) => {
 
+const args = message.content.slice(prefix.length).split(/ +/);
+const commandName = args.shift().toLowerCase(); 
+ 
  //message.delete(100);
     if(message.author.id !== "356510829920780289") return;
-     const sembed = new Discrd.RichEmbed()
-     let say = args.join();
-     .setColor('RANDOM')
-     .setDescription(say);
-        
-        message.channel.send(sembed);
- }
+    
+    let say = args.join[1];
+    let embedsay = new Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setDescription('say')
+    message.channel.send(embedsay)
+    message.delete(100);
  
  
  
+}
