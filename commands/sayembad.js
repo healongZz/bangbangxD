@@ -1,3 +1,5 @@
+const Discord = require("discord.js");
+
 exports.run = (client, message, Discord, prefix) => {
 
 const args = message.content.slice(prefix.length).split(/ +/);
