@@ -98,14 +98,14 @@ client.on("message", async message => {
 }
  
   if(command === "embad") {
-        message.delete(1000);
+       // message.delete(1000);
     if(message.author.id !== "356510829920780289") return;
      let args = args.join(" ");
-     let sembed = new Discrd.RichEmbed()
+     let sembad = new Discrd.RichEmbed()
         .setColor('RANDOM')
         .setDescription('args');
         
-        message.channel.send(sembed);
+        message.channel.send(sembad);
  }
 
 });
