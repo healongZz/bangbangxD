@@ -27,7 +27,7 @@ client.on('ready', () => {
 
 
 function setActivity() {
-    var Gameinfo = [`FB: Hea LOng`, `FB: Hea LOng`,`Legcy Of Discord`, `Legcy Of Discord`]
+    var Gameinfo = [`FB: Hea LOng`, `FB: Hea LOng`,`Legacy Of Discord`,`MOBILE LEGEND`, `Legacy Of Discord`, `MOBILE LEGEND`]
     var info = Gameinfo[Math.floor(Math.random() * Gameinfo.length)]; //Random Math to set the setGame to something in the GameInfo array
     client.user.setActivity(info) // "playing Game" '...' Sets the setGame to what the info Random math picked from the GameInfo Array
     if (config.debugMode === "1") {
